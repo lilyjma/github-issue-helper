@@ -2,6 +2,8 @@
 
 This project is an agent that manages, analyzes, and addresses GitHub issues across multiple repositories. 
 
+> [!NOTE] This project is still work in progress.
+
 ## Features
 - **Manage Issues:**
   - Tag issues with existing labels based on label description
@@ -38,18 +40,34 @@ This agent uses two MCP servers:
 1. GitHub MCP server
 2. Microsoft Learn MCP server
 
-To connect, click _Trust_ when propmted. For the GitHub server, you'll also need to login. Click Allow_ when prompted to authenticate to GitHub and login with your GitHub account.
+To connect, click _Trust_ when propmted. For the GitHub server, you'll also need to login. Click _Allow_ when prompted to authenticate to GitHub and login with your GitHub account.
 
 ## Usage Examples
+Open VSCode Copilot agent mode, in the chat window, enter `/instructions` followed by your question to the agent. For example:
 
-- "Analyze the sentiment and urgency of open issues in https://github.com/Azure/azure-functions-durable-extension"
-- "Create a dashboard showing issue statistics for the https://github.com/dotnet/core repo"
-- "Generate analytics for issues created in the past week for https://github.com/microsoft/TypeScript"
-- "Show me priority recommendations for https://github.com/Azure/azure-functions-durable-extension"
-- "Analyze issue resolution trends and identify bottlenecks in https://github.com/Azure/azure-functions-durable-python"
+- "/instructions Analyze the sentiment and urgency of open issues in https://github.com/Azure/azure-functions-durable-extension"
+- "/instructions Create a dashboard showing issue statistics for the https://github.com/dotnet/core repo"
+- "/instructions Generate analytics for issues created in the past week for https://github.com/microsoft/TypeScript"
+- "/instructions Show me priority recommendations for issues in https://github.com/Azure/azure-functions-durable-extension"
+- "/instructions Analyze issue trends and identify bottlenecks in https://github.com/Azure/azure-functions-durable-python"
 
 Or for multiple repositories:
 "Summarize issue themes from these repositories: 
 - https://github.com/Azure/azure-functions-durable-extension
 - https://github.com/Azure/azure-functions-durable-python
 - https://github.com/Azure/azure-functions-durable-js
+
+### Example questions and result
+
+1. _Analyzer new issues in the past week in https://github.com/Azure/azure-functions-durable-extension for insights and painpoints._
+
+    ![Result from example question to agent.](./media/result.png)
+
+2. _Create a dashboard showing issue statistics for the https://github.com/Azure/azure-functions-durable-extension repo_
+    
+    Find the referenced files in the `examples` directory.
+
+    ![Result from example question to agent.](./media/result2.png)
+
+    _Dashboard_
+    ![Dashboard with issue summary stats.](./media/dashboard.png)
